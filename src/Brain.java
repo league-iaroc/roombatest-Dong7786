@@ -3,7 +3,7 @@ import processing.core.PApplet;
 /***
  * This is the  class where the student will write their robot code.
  * 
- * @author keith
+ * @author Keith
  *
  */
 public class Brain extends Head {
@@ -23,27 +23,30 @@ public class Brain extends Head {
 	 * (think of "setup method in processing")
 	 */
 	public void initialize() {
-
-		// drive direct will move the roomba and takes a wheelspeed
-		driveDirect(-500, -500);
-
-		// This will continue the last command for 2000 milliseconds.
-		sleep(2000);
-
-		// differing wheel speeds will cause the roomba to turn
-		driveDirect(500, 200);
-		sleep(1000);
+//		sleep(2197);
+//driveDirect(-1000,-1000);
+//		sleep(1200);
+//		driveDirect(-100,50);
+//		sleep(2197);
+//		driveDirect(-1000,-1000);
+//		sleep(3500);
+//		driveDirect(-100,50);
+//		sleep(2197);
+//		driveDirect(-1000000000,-1000000000);
+//	
 	}
 
 	/**
 	 * The loop method repeats (think of the draw method)
 	 */
 	public void loop() {
-		driveDirect(600, 500);
-		if (isBumpedRight() || isBumpedLeft()) {
-			// This code will execute if the roomba hits a wall
-			driveDirect(-500, -500);
-			sleep(1000);
+		if(isBumpedRight()&&isBumpedLeft()){
+			driveDirect(-100,50);
+			sleep(100);
+			driveDirect(-1000000000,-1000000000);
+
+		}else{
+			driveDirect(-1000,-1000);
 		}
 	}
 
